@@ -9,18 +9,18 @@ The `ig` files are created by running this code in a CMSSW environment, extracti
 ## Quick start
 
 **Note:** You should try to match as closely as possible the version of CMSSW in which you run the iSpy analzyers to the CMSSW version used to (re)process the data. 
-This example uses CMSSW_10_2_9. Substitute your own version. 
+This example uses CMSSW_13_2_5_patch1. Substitute your own version. 
 
 Create a CMSSW environment: 
 
 ```
-cmsrel CMSSW_10_2_9
+cmsrel CMSSW_13_2_5_patch1
 ```
 
-Change to the CMSSW_10_2_9/src/ directory:
+Change to the CMSSW_13_2_5_patch1/src/ directory:
 
 ```
-cd CMSSW_10_2_9/src/
+cd CMSSW_13_2_5_patch1/src/
 ```
 
 Initialize the CMSSW environment:
@@ -32,7 +32,7 @@ cmsenv
 Clone the necessary source code:
 
 ```
-git clone https://github.com/cms-outreach/ispy-analyzers.git ISpy/Analyzers 
+git clone -b cmssw13 https://github.com/boundino/ispy-analyzers.git ISpy/Analyzers 
 git clone https://github.com/cms-outreach/ispy-services.git ISpy/Services
 ```
 
@@ -48,7 +48,7 @@ Once compiled, change to ISpy/Analyzers:
 cd ISpy/Analyzers
 ```
 
-Open `python/ispy_10_X_X_cfg.py` and specify your input file here:
+Open `python/ispy_12_X_X_cfg.py` and specify your input file here:
 
 ```
 process.source = cms.Source(
@@ -73,7 +73,7 @@ process.source = cms.Source(
 Run the example configuration file:
 
 ```
-cmsRun python/ispy_10_X_X_cfg.py
+cmsRun python/ispy_12_X_X_cfg.py
 ```
 
 View the output in http://cern.ch/ispy-webgl-dev
